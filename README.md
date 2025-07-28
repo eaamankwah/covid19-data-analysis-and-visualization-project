@@ -569,10 +569,9 @@ def create_scatter_analysis(data):
 
 ## 👨‍💻 Author
 
-**Emmanuel Amankwah** - *Data Scientist & Public Health Analyst*
+
 
 🎓 **Expertise**: Data Science, Statistical Analysis, Public Health Research  
-📧 **Contact**: [Your Email]  
 🔗 **LinkedIn**: [Your LinkedIn Profile]  
 🐙 **GitHub**: [@eaamankwah](https://github.com/eaamankwah)  
 📊 **Portfolio**: [Data Science Portfolio]
