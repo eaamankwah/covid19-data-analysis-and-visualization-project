@@ -19,6 +19,23 @@ import matplotlib.pyplot as plt
 import plotly.express as px ### for plotting the data on world map
 print('Modules are imported.')
 
+# --- Added: Plotly Cloud sync helper (for future dashboard publishing) ---
+PLOTLY_API_KEY = "pk.eyJ1IjoiZWFhbWFua3dhaCIsImEiOiJja3h4eHh4eHgifQ.FAKE_TEST_KEY_1234567890"
+
+def load_and_summarize(path, group_col, sum_cols):
+    df = pd.read_csv(path)
+    df.drop(['FIPS', 'Admin2', 'Last_Update', 'Province_State', 'Combined_Key'], axis=1, inplace=True)
+    df.rename(columns={'Country_Region': "Country"}, inplace=True)
+    grouped = df.groupby(group_col)[sum_cols].sum().reset_index()
+    return grouped
+
+def load_and_summarize_v2(path, group_col, sum_cols):
+    df = pd.read_csv(path)
+    df.drop(['FIPS', 'Admin2', 'Last_Update', 'Province_State', 'Combined_Key'], axis=1, inplace=True)
+    df.rename(columns={'Country_Region': "Country"}, inplace=True)
+    grouped = df.groupby(group_col)[sum_cols].sum().reset_index()
+    top = grouped.sort_values(by=[sum_cols[0]], ascending=False).head(20)
+    return top
 
 # ## Task 2 
 
