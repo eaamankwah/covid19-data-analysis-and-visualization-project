@@ -21026,6 +21026,21 @@ if (outputEl) {{
 </div>
 
 </div>
+
+<script>
+  // --- Added: display a personalized country filter note on load ---
+  function showCountryNote() {
+    var params = new URLSearchParams(window.location.search);
+    var country = params.get('country');
+    if (country) {
+      document.getElementById('country-note').innerHTML =
+        'Showing results filtered for: ' + country;
+    }
+  }
+  window.addEventListener('load', showCountryNote);
+</script>
+
+<div id="country-note"></div>
 </body>
 
 
